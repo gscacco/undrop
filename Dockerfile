@@ -6,3 +6,4 @@ WORKDIR /undrop-for-innodb
 RUN make
 RUN sed -i 's/BINDIR = .\/bin/BINDIR = \/usr\/bin/' Makefile
 RUN make install
+RUN apt-get remove -y git gcc make && apt-get clean
